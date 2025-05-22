@@ -226,6 +226,82 @@
         font-size: 1rem;
       }
     }
+    
+    /* Language Switcher */
+    .language-switcher {
+      position: relative;
+      margin-right: 20px;
+    }
+    
+    .language-btn {
+      background-color: transparent;
+      border: 1px solid var(--primary-color);
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.9rem;
+    }
+    
+    .language-btn img {
+      width: 20px;
+      height: 14px;
+    }
+    
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-width: 120px;
+      display: none;
+      z-index: 100;
+      margin-top: 5px;
+    }
+    
+    .language-dropdown.show {
+      display: block;
+    }
+    
+    .language-option {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .language-option:hover {
+      background-color: var(--light-color);
+    }
+    
+    .language-option img {
+      width: 20px;
+      height: 14px;
+    }
+    
+    .language-txt {
+      font-size: 0.9rem;
+      color: var(--dark-color);
+    }
+    
+    /* Header adjustments */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -233,95 +309,113 @@
     <div class="container header-container">
       <img src="1.webp" alt="PathCAN Logo" class="logo">
       <ul class="nav-menu">
-        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Trang chủ</a></li>
-        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Giới thiệu</a></li>
-        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Nền tảng</a></li>
-        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Cộng đồng</a></li>
-        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Tin tức</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi" data-lang-vi="Trang chủ" data-lang-en="Home">Trang chủ</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi" data-lang-vi="Giới thiệu" data-lang-en="About">Giới thiệu</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi" data-lang-vi="Nền tảng" data-lang-en="Platform">Nền tảng</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi" data-lang-vi="Cộng đồng" data-lang-en="Community">Cộng đồng</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi" data-lang-vi="Tin tức" data-lang-en="News">Tin tức</a></li>
       </ul>
-      <button class="login-btn" onclick="window.location.href='https://pathcanacademy.com/vi'">Đăng nhập</button>
+      <div class="header-right">
+        <div class="language-switcher">
+          <button class="language-btn" id="langBtn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="Tiếng Việt" id="currentLangFlag">
+            <span id="currentLang" data-lang-vi="Tiếng Việt" data-lang-en="English">Tiếng Việt</span>
+          </button>
+          <div class="language-dropdown" id="langDropdown">
+            <div class="language-option" data-lang="vi">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="Tiếng Việt">
+              <span class="language-txt">Việt Nam</span>
+            </div>
+            <div class="language-option" data-lang="en">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="English">
+              <span class="language-txt">English</span>
+            </div>
+          </div>
+        </div>
+        <button class="login-btn" onclick="window.location.href='https://pathcanacademy.com/vi'" data-lang-vi="Đăng nhập" data-lang-en="Login">Đăng nhập</button>
+      </div>
     </div>
   </header>
   
   <section class="hero">
     <div class="container">
-      <h1>Chính Sách Bảo Mật</h1>
-      <p>PathCAN cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn</p>
+      <h1 data-lang-vi="Chính Sách Bảo Mật" data-lang-en="Privacy Policy">Chính Sách Bảo Mật</h1>
+      <p data-lang-vi="PathCAN cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn" data-lang-en="PathCAN is committed to protecting your personal information and privacy">PathCAN cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn</p>
     </div>
   </section>
   
   <section class="privacy-content container">
     <div class="privacy-section">
-      <h2>Giới Thiệu</h2>
-      <p>Chào mừng bạn đến với Chính sách Bảo mật của PathCAN Academy. Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân mà bạn chia sẻ với chúng tôi. Chính sách này mô tả cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn sử dụng nền tảng và dịch vụ của chúng tôi.</p>
+      <h2 data-lang-vi="Giới Thiệu" data-lang-en="Introduction">Giới Thiệu</h2>
+      <p data-lang-vi="Chào mừng bạn đến với Chính sách Bảo mật của PathCAN Academy. Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân mà bạn chia sẻ với chúng tôi. Chính sách này mô tả cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn sử dụng nền tảng và dịch vụ của chúng tôi." data-lang-en="Welcome to the PathCAN Academy Privacy Policy. We respect your privacy and are committed to protecting the personal information you share with us. This policy describes how we collect, use, disclose and protect your information when you use our platform and services.">Chào mừng bạn đến với Chính sách Bảo mật của PathCAN Academy. Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân mà bạn chia sẻ với chúng tôi. Chính sách này mô tả cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn sử dụng nền tảng và dịch vụ của chúng tôi.</p>
     </div>
     
     <div class="privacy-section">
-      <h2>Thông Tin Chúng Tôi Thu Thập</h2>
-      <p>Chúng tôi thu thập thông tin sau đây từ người dùng:</p>
+      <h2 data-lang-vi="Thông Tin Chúng Tôi Thu Thập" data-lang-en="Information We Collect">Thông Tin Chúng Tôi Thu Thập</h2>
+      <p data-lang-vi="Chúng tôi thu thập thông tin sau đây từ người dùng:" data-lang-en="We collect the following information from users:">Chúng tôi thu thập thông tin sau đây từ người dùng:</p>
       <ul>
-        <li><strong>Thông tin cá nhân:</strong> Tên, địa chỉ email, số điện thoại, địa chỉ, thông tin học vấn và nghề nghiệp.</li>
-        <li><strong>Thông tin hồ sơ:</strong> Bảng điểm, bằng cấp, chứng chỉ và các tài liệu khác liên quan đến việc học tập và ứng tuyển.</li>
-        <li><strong>Thông tin sử dụng:</strong> Dữ liệu về cách bạn tương tác với nền tảng của chúng tôi.</li>
-        <li><strong>Thông tin thiết bị:</strong> Dữ liệu về thiết bị bạn sử dụng để truy cập dịch vụ của chúng tôi.</li>
+        <li><strong data-lang-vi="Thông tin cá nhân:" data-lang-en="Personal information:">Thông tin cá nhân:</strong> <span data-lang-vi="Tên, địa chỉ email, số điện thoại, địa chỉ, thông tin học vấn và nghề nghiệp." data-lang-en="Name, email address, phone number, address, educational and professional information.">Tên, địa chỉ email, số điện thoại, địa chỉ, thông tin học vấn và nghề nghiệp.</span></li>
+        <li><strong data-lang-vi="Thông tin hồ sơ:" data-lang-en="Profile information:">Thông tin hồ sơ:</strong> <span data-lang-vi="Bảng điểm, bằng cấp, chứng chỉ và các tài liệu khác liên quan đến việc học tập và ứng tuyển." data-lang-en="Transcripts, diplomas, certificates, and other documents related to education and applications.">Bảng điểm, bằng cấp, chứng chỉ và các tài liệu khác liên quan đến việc học tập và ứng tuyển.</span></li>
+        <li><strong data-lang-vi="Thông tin sử dụng:" data-lang-en="Usage information:">Thông tin sử dụng:</strong> <span data-lang-vi="Dữ liệu về cách bạn tương tác với nền tảng của chúng tôi." data-lang-en="Data about how you interact with our platform.">Dữ liệu về cách bạn tương tác với nền tảng của chúng tôi.</span></li>
+        <li><strong data-lang-vi="Thông tin thiết bị:" data-lang-en="Device information:">Thông tin thiết bị:</strong> <span data-lang-vi="Dữ liệu về thiết bị bạn sử dụng để truy cập dịch vụ của chúng tôi." data-lang-en="Data about the device you use to access our services.">Dữ liệu về thiết bị bạn sử dụng để truy cập dịch vụ của chúng tôi.</span></li>
       </ul>
     </div>
     
     <div class="privacy-section">
-      <h2>Cách Chúng Tôi Sử Dụng Thông Tin</h2>
-      <p>Chúng tôi sử dụng thông tin thu thập cho các mục đích sau:</p>
+      <h2 data-lang-vi="Cách Chúng Tôi Sử Dụng Thông Tin" data-lang-en="How We Use Information">Cách Chúng Tôi Sử Dụng Thông Tin</h2>
+      <p data-lang-vi="Chúng tôi sử dụng thông tin thu thập cho các mục đích sau:" data-lang-en="We use the collected information for the following purposes:">Chúng tôi sử dụng thông tin thu thập cho các mục đích sau:</p>
       <ul>
-        <li>Cung cấp và cải thiện dịch vụ của chúng tôi.</li>
-        <li>Cá nhân hóa trải nghiệm học tập của bạn.</li>
-        <li>Hỗ trợ quá trình nộp đơn xin học và visa.</li>
-        <li>Liên lạc với bạn về cập nhật dịch vụ, sự kiện và cơ hội mới.</li>
-        <li>Phân tích dữ liệu để cải thiện nền tảng và dịch vụ của chúng tôi.</li>
+        <li data-lang-vi="Cung cấp và cải thiện dịch vụ của chúng tôi." data-lang-en="Provide and improve our services.">Cung cấp và cải thiện dịch vụ của chúng tôi.</li>
+        <li data-lang-vi="Cá nhân hóa trải nghiệm học tập của bạn." data-lang-en="Personalize your learning experience.">Cá nhân hóa trải nghiệm học tập của bạn.</li>
+        <li data-lang-vi="Hỗ trợ quá trình nộp đơn xin học và visa." data-lang-en="Support your application and visa process.">Hỗ trợ quá trình nộp đơn xin học và visa.</li>
+        <li data-lang-vi="Liên lạc với bạn về cập nhật dịch vụ, sự kiện và cơ hội mới." data-lang-en="Communicate with you about service updates, events, and new opportunities.">Liên lạc với bạn về cập nhật dịch vụ, sự kiện và cơ hội mới.</li>
+        <li data-lang-vi="Phân tích dữ liệu để cải thiện nền tảng và dịch vụ của chúng tôi." data-lang-en="Analyze data to improve our platform and services.">Phân tích dữ liệu để cải thiện nền tảng và dịch vụ của chúng tôi.</li>
       </ul>
     </div>
     
     <div class="privacy-section">
-      <h2>Chia Sẻ Thông Tin</h2>
-      <p>Chúng tôi có thể chia sẻ thông tin cá nhân với:</p>
+      <h2 data-lang-vi="Chia Sẻ Thông Tin" data-lang-en="Sharing Information">Chia Sẻ Thông Tin</h2>
+      <p data-lang-vi="Chúng tôi có thể chia sẻ thông tin cá nhân với:" data-lang-en="We may share your personal information with:">Chúng tôi có thể chia sẻ thông tin cá nhân với:</p>
       <ul>
-        <li><strong>Đối tác giáo dục:</strong> Các trường học và tổ chức giáo dục mà bạn quan tâm.</li>
-        <li><strong>Nhà cung cấp dịch vụ:</strong> Các bên thứ ba hỗ trợ chúng tôi cung cấp dịch vụ.</li>
-        <li><strong>Cơ quan chức năng:</strong> Khi luật pháp yêu cầu hoặc để bảo vệ quyền lợi của chúng tôi.</li>
+        <li><strong data-lang-vi="Đối tác giáo dục:" data-lang-en="Educational partners:">Đối tác giáo dục:</strong> Các trường học và tổ chức giáo dục mà bạn quan tâm.</li>
+        <li><strong data-lang-vi="Nhà cung cấp dịch vụ:" data-lang-en="Service providers:">Nhà cung cấp dịch vụ:</strong> Các bên thứ ba hỗ trợ chúng tôi cung cấp dịch vụ.</li>
+        <li><strong data-lang-vi="Cơ quan chức năng:" data-lang-en="Governmental authorities:">Cơ quan chức năng:</strong> Khi luật pháp yêu cầu hoặc để bảo vệ quyền lợi của chúng tôi.</li>
       </ul>
     </div>
     
     <div class="privacy-section">
-      <h2>Bảo Mật Dữ Liệu</h2>
-      <p>Chúng tôi thực hiện các biện pháp bảo mật thích hợp để bảo vệ thông tin cá nhân của bạn khỏi truy cập, sửa đổi, tiết lộ hoặc phá hủy trái phép. Các biện pháp này bao gồm mã hóa dữ liệu, kiểm soát truy cập và đào tạo nhân viên về tầm quan trọng của việc bảo mật thông tin.</p>
+      <h2 data-lang-vi="Bảo Mật Dữ Liệu" data-lang-en="Data Protection">Bảo Mật Dữ Liệu</h2>
+      <p data-lang-vi="Chúng tôi thực hiện các biện pháp bảo mật thích hợp để bảo vệ thông tin cá nhân của bạn khỏi truy cập, sửa đổi, tiết lộ hoặc phá hủy trái phép. Các biện pháp này bao gồm mã hóa dữ liệu, kiểm soát truy cập và đào tạo nhân viên về tầm quan trọng của việc bảo mật thông tin." data-lang-en="We implement appropriate security measures to protect your personal information from unauthorized access, modification, disclosure or destruction. These measures include data encryption, access control and staff training on the importance of data protection.">Chúng tôi thực hiện các biện pháp bảo mật thích hợp để bảo vệ thông tin cá nhân của bạn khỏi truy cập, sửa đổi, tiết lộ hoặc phá hủy trái phép. Các biện pháp này bao gồm mã hóa dữ liệu, kiểm soát truy cập và đào tạo nhân viên về tầm quan trọng của việc bảo mật thông tin.</p>
     </div>
     
     <div class="privacy-section">
-      <h2>Quyền Của Bạn</h2>
-      <p>Bạn có các quyền sau đối với thông tin cá nhân của mình:</p>
+      <h2 data-lang-vi="Quyền Của Bạn" data-lang-en="Your Rights">Quyền Của Bạn</h2>
+      <p data-lang-vi="Bạn có các quyền sau đối với thông tin cá nhân của mình:" data-lang-en="You have the following rights regarding your personal information:">Bạn có các quyền sau đối với thông tin cá nhân của mình:</p>
       <ul>
-        <li>Quyền truy cập và nhận bản sao thông tin của bạn.</li>
-        <li>Quyền yêu cầu chỉnh sửa hoặc cập nhật thông tin không chính xác.</li>
-        <li>Quyền yêu cầu xóa thông tin trong một số trường hợp.</li>
-        <li>Quyền hạn chế hoặc phản đối việc xử lý thông tin của bạn.</li>
-        <li>Quyền rút lại sự đồng ý của bạn bất cứ lúc nào.</li>
+        <li data-lang-vi="Quyền truy cập và nhận bản sao thông tin của bạn." data-lang-en="Access and receive a copy of your information.">Quyền truy cập và nhận bản sao thông tin của bạn.</li>
+        <li data-lang-vi="Quyền yêu cầu chỉnh sửa hoặc cập nhật thông tin không chính xác." data-lang-en="Request corrections to your information.">Quyền yêu cầu chỉnh sửa hoặc cập nhật thông tin không chính xác.</li>
+        <li data-lang-vi="Quyền yêu cầu xóa thông tin trong một số trường hợp." data-lang-en="Request deletion of your information in certain circumstances.">Quyền yêu cầu xóa thông tin trong một số trường hợp.</li>
+        <li data-lang-vi="Quyền hạn chế hoặc phản đối việc xử lý thông tin của bạn." data-lang-en="Limit or object to processing of your information.">Quyền hạn chế hoặc phản đối việc xử lý thông tin của bạn.</li>
+        <li data-lang-vi="Quyền rút lại sự đồng ý của bạn bất cứ lúc nào." data-lang-en="Withdraw your consent at any time.">Quyền rút lại sự đồng ý của bạn bất cứ lúc nào.</li>
       </ul>
     </div>
     
     <div class="privacy-section">
-      <h2>Thay Đổi Chính Sách</h2>
-      <p>Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian để phản ánh các thay đổi trong hoạt động kinh doanh của chúng tôi hoặc để tuân thủ các yêu cầu pháp lý mới. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi quan trọng nào bằng cách đăng thông báo trên trang web của chúng tôi hoặc gửi email cho bạn.</p>
+      <h2 data-lang-vi="Thay Đổi Chính Sách" data-lang-en="Changes to Privacy Policy">Thay Đổi Chính Sách</h2>
+      <p data-lang-vi="Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian để phản ánh các thay đổi trong hoạt động kinh doanh của chúng tôi hoặc để tuân thủ các yêu cầu pháp lý mới. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi quan trọng nào bằng cách đăng thông báo trên trang web của chúng tôi hoặc gửi email cho bạn." data-lang-en="We may update this Privacy Policy from time to time to reflect changes in our business or to comply with new legal requirements. We will notify you of any significant changes by posting an updated version of the policy on our website or by notifying you via email.">Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian để phản ánh các thay đổi trong hoạt động kinh doanh của chúng tôi hoặc để tuân thủ các yêu cầu pháp lý mới. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi quan trọng nào bằng cách đăng thông báo trên trang web của chúng tôi hoặc gửi email cho bạn.</p>
     </div>
     
     <div class="privacy-section">
-      <h2>Liên Hệ Với Chúng Tôi</h2>
-      <p>Nếu bạn có bất kỳ câu hỏi hoặc lo ngại nào về Chính sách Bảo mật này hoặc cách chúng tôi xử lý thông tin cá nhân của bạn, vui lòng liên hệ với chúng tôi qua:</p>
+      <h2 data-lang-vi="Liên Hệ Với Chúng Tôi" data-lang-en="Contact Us">Liên Hệ Với Chúng Tôi</h2>
+      <p data-lang-vi="Nếu bạn có bất kỳ câu hỏi hoặc lo ngại nào về Chính sách Bảo mật này hoặc cách chúng tôi xử lý thông tin cá nhân của bạn, vui lòng liên hệ với chúng tôi qua:" data-lang-en="If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us through:">Nếu bạn có bất kỳ câu hỏi hoặc lo ngại nào về Chính sách Bảo mật này hoặc cách chúng tôi xử lý thông tin cá nhân của bạn, vui lòng liên hệ với chúng tôi qua:</p>
       <p>
         Email: huong.vu@pathcanacademy.com<br>
-        Điện thoại: +1 (403) 369 6037<br>
-        Địa chỉ: 
+        <span data-lang-vi="Điện thoại:" data-lang-en="Phone:">Điện thoại:</span> +1 (403) 369 6037<br>
+        <span data-lang-vi="Địa chỉ:" data-lang-en="Address:">Địa chỉ:</span> 
       </p>
       <ul>
-        <li>Vancouver office: 48600 STN Bentall, Vancouver, BC, V7X 1T2</li>
-        <li>Calgary office: 1550 5th Street, SW #300, Calgary, Alberta, Canada</li>
+        <li data-lang-vi="Vancouver office: 48600 STN Bentall, Vancouver, BC, V7X 1T2" data-lang-en="Vancouver office: 48600 STN Bentall, Vancouver, BC, V7X 1T2">Vancouver office: 48600 STN Bentall, Vancouver, BC, V7X 1T2</li>
+        <li data-lang-vi="Calgary office: 1550 5th Street, SW #300, Calgary, Alberta, Canada" data-lang-en="Calgary office: 1550 5th Street, SW #300, Calgary, Alberta, Canada">Calgary office: 1550 5th Street, SW #300, Calgary, Alberta, Canada</li>
       </ul>
     </div>
   </section>
@@ -330,46 +424,108 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>Về chúng tôi</h3>
+          <h3 data-lang-vi="Về chúng tôi" data-lang-en="About Us">Về chúng tôi</h3>
           <ul>
-            <li><a href="https://pathcanacademy.com/vi">Nhiệm vụ</a></li>
-            <li><a href="https://pathcanacademy.com/vi">Lịch sử</a></li>
-            <li><a href="https://pathcanacademy.com/vi">Đội ngũ</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Nhiệm vụ" data-lang-en="Mission">Nhiệm vụ</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Lịch sử" data-lang-en="History">Lịch sử</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Đội ngũ" data-lang-en="Team">Đội ngũ</a></li>
           </ul>
         </div>
         
         <div class="footer-column">
-          <h3>Nền tảng</h3>
+          <h3 data-lang-vi="Nền tảng" data-lang-en="Platform">Nền tảng</h3>
           <ul>
-            <li><a href="https://pathcanacademy.com/vi">Tính năng nổi bật</a></li>
-            <li><a href="https://pathcanacademy.com/vi">Cam kết</a></li>
-            <li><a href="https://pathcanacademy.com/vi">Gói dịch vụ</a></li>
-            <li><a href="https://pathcanacademy.com/vi">AI Demo</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Tính năng nổi bật" data-lang-en="Key Features">Tính năng nổi bật</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Cam kết" data-lang-en="Commitment">Cam kết</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Gói dịch vụ" data-lang-en="Service Packages">Gói dịch vụ</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="AI Demo" data-lang-en="AI Demo">AI Demo</a></li>
           </ul>
         </div>
         
         <div class="footer-column">
-          <h3>Dịch vụ</h3>
+          <h3 data-lang-vi="Dịch vụ" data-lang-en="Services">Dịch vụ</h3>
           <ul>
-            <li><a href="https://pathcanacademy.com/vi">Trường</a></li>
-            <li><a href="https://pathcanacademy.com/vi">Chương trình học</a></li>
-            <li><a href="https://pathcanacademy.com/vi">Cộng đồng</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Trường" data-lang-en="Schools">Trường</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Chương trình học" data-lang-en="Programs">Chương trình học</a></li>
+            <li><a href="https://pathcanacademy.com/vi" data-lang-vi="Cộng đồng" data-lang-en="Community">Cộng đồng</a></li>
           </ul>
         </div>
         
         <div class="footer-column">
-          <h3>Liên hệ</h3>
+          <h3 data-lang-vi="Liên hệ" data-lang-en="Contact">Liên hệ</h3>
           <ul>
             <li>Email: huong.vu@pathcanacademy.com</li>
-            <li>Điện thoại: +1 (403) 369 6037</li>
+            <li><span data-lang-vi="Điện thoại:" data-lang-en="Phone:">Điện thoại:</span> +1 (403) 369 6037</li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; Copyright 2024 | All Rights Reserved PathCAN | <a href="https://pathcanacademy.com/vi" style="color: #aaa;">Privacy Policy</a></p>
+        <p>&copy; Copyright 2024 | All Rights Reserved PathCAN | <a href="https://pathcanacademy.com/vi" style="color: #aaa;" data-lang-vi="Chính Sách Bảo Mật" data-lang-en="Privacy Policy">Chính Sách Bảo Mật</a></p>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Language switcher functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const langBtn = document.getElementById('langBtn');
+      const langDropdown = document.getElementById('langDropdown');
+      const langOptions = document.querySelectorAll('.language-option');
+      const currentLang = document.getElementById('currentLang');
+      const currentLangFlag = document.getElementById('currentLangFlag');
+      
+      // Default language is Vietnamese
+      let activeLanguage = 'vi';
+      
+      // Toggle language dropdown
+      langBtn.addEventListener('click', function() {
+        langDropdown.classList.toggle('show');
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.language-switcher')) {
+          langDropdown.classList.remove('show');
+        }
+      });
+      
+      // Language option selection
+      langOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          changeLanguage(lang);
+          langDropdown.classList.remove('show');
+          
+          // Update button display
+          if (lang === 'vi') {
+            currentLang.textContent = 'Tiếng Việt';
+            currentLangFlag.src = 'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg';
+          } else {
+            currentLang.textContent = 'English';
+            currentLangFlag.src = 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg';
+          }
+        });
+      });
+      
+      // Function to change language across the site
+      function changeLanguage(lang) {
+        activeLanguage = lang;
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update all elements with data-lang-* attributes
+        document.querySelectorAll('[data-lang-' + lang + ']').forEach(element => {
+          // Check if it's an attribute of an element or the text content
+          if (element.tagName === 'A' && element.hasAttribute('data-lang-' + lang + '-href')) {
+            element.setAttribute('href', element.getAttribute('data-lang-' + lang + '-href'));
+          } else {
+            element.textContent = element.getAttribute('data-lang-' + lang);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
