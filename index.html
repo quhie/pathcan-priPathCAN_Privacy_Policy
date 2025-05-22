@@ -1,9 +1,375 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>PathCAN Privacy Policy!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính Sách Bảo Mật | PathCAN Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="Masked.png" type="image/png">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #003366;
+      --accent-color: #ff9900;
+      --text-color: #333;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #fff;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      height: 40px;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    .nav-item a {
+      text-decoration: none;
+      color: var(--dark-color);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-item a:hover {
+      color: var(--primary-color);
+    }
+    
+    .login-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    
+    .login-btn:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Privacy Content */
+    .privacy-content {
+      padding: 60px 0;
+    }
+    
+    .privacy-section {
+      margin-bottom: 40px;
+    }
+    
+    .privacy-section h2 {
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .privacy-section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    .privacy-section p {
+      margin-bottom: 15px;
+    }
+    
+    .privacy-section ul, .privacy-section ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .privacy-section li {
+      margin-bottom: 8px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      .nav-menu {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container header-container">
+      <img src="1.webp" alt="PathCAN Logo" class="logo">
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Trang chủ</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Giới thiệu</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Nền tảng</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Cộng đồng</a></li>
+        <li class="nav-item"><a href="https://pathcanacademy.com/vi">Tin tức</a></li>
+      </ul>
+      <button class="login-btn" onclick="window.location.href='https://pathcanacademy.com/vi'">Đăng nhập</button>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="container">
+      <h1>Chính Sách Bảo Mật</h1>
+      <p>PathCAN cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn</p>
+    </div>
+  </section>
+  
+  <section class="privacy-content container">
+    <div class="privacy-section">
+      <h2>Giới Thiệu</h2>
+      <p>Chào mừng bạn đến với Chính sách Bảo mật của PathCAN Academy. Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân mà bạn chia sẻ với chúng tôi. Chính sách này mô tả cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn sử dụng nền tảng và dịch vụ của chúng tôi.</p>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Thông Tin Chúng Tôi Thu Thập</h2>
+      <p>Chúng tôi thu thập thông tin sau đây từ người dùng:</p>
+      <ul>
+        <li><strong>Thông tin cá nhân:</strong> Tên, địa chỉ email, số điện thoại, địa chỉ, thông tin học vấn và nghề nghiệp.</li>
+        <li><strong>Thông tin hồ sơ:</strong> Bảng điểm, bằng cấp, chứng chỉ và các tài liệu khác liên quan đến việc học tập và ứng tuyển.</li>
+        <li><strong>Thông tin sử dụng:</strong> Dữ liệu về cách bạn tương tác với nền tảng của chúng tôi.</li>
+        <li><strong>Thông tin thiết bị:</strong> Dữ liệu về thiết bị bạn sử dụng để truy cập dịch vụ của chúng tôi.</li>
+      </ul>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Cách Chúng Tôi Sử Dụng Thông Tin</h2>
+      <p>Chúng tôi sử dụng thông tin thu thập cho các mục đích sau:</p>
+      <ul>
+        <li>Cung cấp và cải thiện dịch vụ của chúng tôi.</li>
+        <li>Cá nhân hóa trải nghiệm học tập của bạn.</li>
+        <li>Hỗ trợ quá trình nộp đơn xin học và visa.</li>
+        <li>Liên lạc với bạn về cập nhật dịch vụ, sự kiện và cơ hội mới.</li>
+        <li>Phân tích dữ liệu để cải thiện nền tảng và dịch vụ của chúng tôi.</li>
+      </ul>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Chia Sẻ Thông Tin</h2>
+      <p>Chúng tôi có thể chia sẻ thông tin cá nhân với:</p>
+      <ul>
+        <li><strong>Đối tác giáo dục:</strong> Các trường học và tổ chức giáo dục mà bạn quan tâm.</li>
+        <li><strong>Nhà cung cấp dịch vụ:</strong> Các bên thứ ba hỗ trợ chúng tôi cung cấp dịch vụ.</li>
+        <li><strong>Cơ quan chức năng:</strong> Khi luật pháp yêu cầu hoặc để bảo vệ quyền lợi của chúng tôi.</li>
+      </ul>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Bảo Mật Dữ Liệu</h2>
+      <p>Chúng tôi thực hiện các biện pháp bảo mật thích hợp để bảo vệ thông tin cá nhân của bạn khỏi truy cập, sửa đổi, tiết lộ hoặc phá hủy trái phép. Các biện pháp này bao gồm mã hóa dữ liệu, kiểm soát truy cập và đào tạo nhân viên về tầm quan trọng của việc bảo mật thông tin.</p>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Quyền Của Bạn</h2>
+      <p>Bạn có các quyền sau đối với thông tin cá nhân của mình:</p>
+      <ul>
+        <li>Quyền truy cập và nhận bản sao thông tin của bạn.</li>
+        <li>Quyền yêu cầu chỉnh sửa hoặc cập nhật thông tin không chính xác.</li>
+        <li>Quyền yêu cầu xóa thông tin trong một số trường hợp.</li>
+        <li>Quyền hạn chế hoặc phản đối việc xử lý thông tin của bạn.</li>
+        <li>Quyền rút lại sự đồng ý của bạn bất cứ lúc nào.</li>
+      </ul>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Thay Đổi Chính Sách</h2>
+      <p>Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian để phản ánh các thay đổi trong hoạt động kinh doanh của chúng tôi hoặc để tuân thủ các yêu cầu pháp lý mới. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi quan trọng nào bằng cách đăng thông báo trên trang web của chúng tôi hoặc gửi email cho bạn.</p>
+    </div>
+    
+    <div class="privacy-section">
+      <h2>Liên Hệ Với Chúng Tôi</h2>
+      <p>Nếu bạn có bất kỳ câu hỏi hoặc lo ngại nào về Chính sách Bảo mật này hoặc cách chúng tôi xử lý thông tin cá nhân của bạn, vui lòng liên hệ với chúng tôi qua:</p>
+      <p>
+        Email: huong.vu@pathcanacademy.com<br>
+        Điện thoại: +1 (403) 369 6037<br>
+        Địa chỉ: 
+      </p>
+      <ul>
+        <li>Vancouver office: 48600 STN Bentall, Vancouver, BC, V7X 1T2</li>
+        <li>Calgary office: 1550 5th Street, SW #300, Calgary, Alberta, Canada</li>
+      </ul>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Về chúng tôi</h3>
+          <ul>
+            <li><a href="https://pathcanacademy.com/vi">Nhiệm vụ</a></li>
+            <li><a href="https://pathcanacademy.com/vi">Lịch sử</a></li>
+            <li><a href="https://pathcanacademy.com/vi">Đội ngũ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Nền tảng</h3>
+          <ul>
+            <li><a href="https://pathcanacademy.com/vi">Tính năng nổi bật</a></li>
+            <li><a href="https://pathcanacademy.com/vi">Cam kết</a></li>
+            <li><a href="https://pathcanacademy.com/vi">Gói dịch vụ</a></li>
+            <li><a href="https://pathcanacademy.com/vi">AI Demo</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Dịch vụ</h3>
+          <ul>
+            <li><a href="https://pathcanacademy.com/vi">Trường</a></li>
+            <li><a href="https://pathcanacademy.com/vi">Chương trình học</a></li>
+            <li><a href="https://pathcanacademy.com/vi">Cộng đồng</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Liên hệ</h3>
+          <ul>
+            <li>Email: huong.vu@pathcanacademy.com</li>
+            <li>Điện thoại: +1 (403) 369 6037</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; Copyright 2024 | All Rights Reserved PathCAN | <a href="https://pathcanacademy.com/vi" style="color: #aaa;">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
